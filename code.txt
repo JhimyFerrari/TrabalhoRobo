@@ -1,0 +1,74 @@
+Alunos: Jhimy Ferrari & Gabriel Costa
+
+inicio
+
+    //Imagina-se que a distância é dada em cm,
+    //e que o robô tem uma visão virtualmente ilimitada
+    //se tiver 1cm na frente, retorna 1
+    //se tiver 5cm na frente, retorna 5
+    //se tiver 100cm na frente, retorna 100
+
+    // OBSERVAÇÃO IMPORTANTE, O ALGORITMO RODA 6X;
+    
+    inteiro: frente, traseira, esquerda, direita, helper;
+
+    leia(frente);
+
+    se (frente > 0)
+        entao
+            inicio
+
+                helper <- (frente);
+                escreva ("avançar ", helper); //quantidade que o robo vai andar
+               
+            fim;
+        senão
+            inicio
+            
+                leia(direita);
+                leia(esquerda);
+
+                
+                se(direita = 0 e esquerda = 0)
+                    entao  helper <- 2;
+                fimse;
+                se(direita >= esquerda)
+                    entao helper <- 0;
+                fimse;
+                se(direita < esquerda)
+                    entao helper <- 1;
+                fimse;
+               
+                
+                escolha (helper)
+                    caso 0:
+                        escreva ("Virar à direita); 
+                    caso 1:
+                        escreva ("Virar à esquerda);
+                    caso 2:
+                        escreva ("Recuar até que Direita ou Esquerda sejam diferente de 0");
+
+                        leia(direita);
+                        leia(esquerda);
+
+                        se(direita >= esquerda)
+                            entao helper <- 0;
+                        fimse;
+                        se(direita < esquerda)
+                            entao helper <- 1;
+                        fimse;
+
+                        escolha (helper)
+                            caso 0:
+                                escreva ("Virar à direita); 
+                            caso 1:
+                                escreva ("Virar à esquerda);
+                        fimescolha;
+                fimescolha;
+            fim;
+    fimse;
+
+fim.
+
+
+
